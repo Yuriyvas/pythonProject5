@@ -2,7 +2,7 @@ name: Run Python Tests and publish Allure repo
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 permissions:
   checks: write
