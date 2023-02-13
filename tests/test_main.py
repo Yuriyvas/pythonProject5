@@ -1,11 +1,16 @@
 import allure
 import time
 from allure_commons.types import AttachmentType
+# from selenium import webdriver
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
+firefox_options = Options()
+firefox_options.set_headless()
+driver = webdriver.Firefox(options=firefox_options)
 
 class TestPageSearch:
     def setup(self):
-        self.driver = webdriver.Chrome()
+        self.driver = driver
     def teardown(self):
         self.driver.quit()
 
