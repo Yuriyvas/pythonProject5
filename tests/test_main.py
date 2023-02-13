@@ -13,8 +13,8 @@ class TestPageSearch:
     def setup(self):
         self.driver = driver
 
-    def teardown(self):
-        self.driver.quit()
+    # def teardown(self):
+    #     self.driver.quit()
 
     @allure.feature('Open pages')
     @allure.story('Открывает страницу "google.com"')
