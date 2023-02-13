@@ -4,9 +4,13 @@ from allure_commons.types import AttachmentType
 # from selenium import webdriver
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
-firefox_options = Options()
-firefox_options.set_headless()
-driver = webdriver.Firefox(options=firefox_options)
+# firefox_options = Options()
+# firefox_options.
+# driver = webdriver.Firefox(options=firefox_options)
+
+fireFoxOptions = webdriver.FirefoxOptions()
+fireFoxOptions.set_headless()
+driver = webdriver.Firefox(firefox_options=fireFoxOptions)
 
 class TestPageSearch:
     def setup(self):
