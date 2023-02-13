@@ -8,9 +8,11 @@ from selenium.webdriver.firefox.options import Options
 # firefox_options.
 # driver = webdriver.Firefox(options=firefox_options)
 
-fireFoxOptions = webdriver.FirefoxOptions()
-fireFoxOptions.set_headless()
-driver = webdriver.Firefox(firefox_options=fireFoxOptions)
+# fireFoxOptions = webdriver.FirefoxOptions()
+# fireFoxOptions.set_headless()
+options = webdriver.FirefoxOptions()
+options.add_argument("--headless")
+driver = webdriver.Firefox(firefox_options=options)
 
 class TestPageSearch:
     def setup(self):
