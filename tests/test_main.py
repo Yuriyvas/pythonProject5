@@ -1,24 +1,18 @@
 import allure
-import time
+# import time
 from allure_commons.types import AttachmentType
-# from selenium import webdriver
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
-# firefox_options = Options()
-# firefox_options.
-# driver = webdriver.Firefox(options=firefox_options)
 
-# fireFoxOptions = webdriver.FirefoxOptions()
-# fireFoxOptions.set_headless()
-# options = webdriver.FirefoxOptions()
-# options.add_argument("--headless")
 options = Options()
 options.headless = True
 driver = webdriver.Firefox(options=options)
 
+
 class TestPageSearch:
     def setup(self):
         self.driver = driver
+
     def teardown(self):
         self.driver.quit()
 
@@ -31,12 +25,12 @@ class TestPageSearch:
         assert self.driver.title == 'Google'
 
     @allure.feature('Open pages')
-    @allure.story('Открывает страницу "yandex.ru"')
+    @allure.story('Открывает страницу "https://www.saucedemo.com/')
     def test_yandex_search(self):
-        self.driver.get('https://yandex.ru')
+        self.driver.get('https://www.saucedemo.com/')
         with allure.step('делаем скриншот'):
             allure.attach(self.driver.get_screenshot_as_png(), name="Screenshot", attachment_type=AttachmentType.PNG)
-        assert self.driver.title =='Яндекс'
+        assert self.driver.title == 'Swag Labs'
 
     @allure.feature('Open pages')
     @allure.story('Открывает страницу "mail.ru"')
@@ -44,5 +38,4 @@ class TestPageSearch:
         self.driver.get('https://mail.ru')
         with allure.step('делаем скриншот'):
             allure.attach(self.driver.get_screenshot_as_png(), name="Screenshot", attachment_type=AttachmentType.PNG)
-        assert self.driver.title =='Mail.ru'
-
+        assert self.driver.title == 'Mail.ru'
